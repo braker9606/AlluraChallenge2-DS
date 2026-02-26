@@ -61,7 +61,8 @@ El proceso de preprocesamiento incluyó:
 
 Estas etapas garantizaron coherencia estructural y calidad analítica antes de realizar el análisis exploratorio.
 
-📊 Análisis Exploratorio de Datos (EDA)
+## 📊 Análisis Exploratorio de Datos (EDA)
+
 1️⃣ Distribución del churn
 
 Se evaluó la proporción de clientes que cancelaron el servicio frente a aquellos que permanecen activos, permitiendo dimensionar la magnitud del fenómeno.
