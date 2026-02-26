@@ -33,17 +33,17 @@ Analizar el comportamiento de la evasión de clientes mediante técnicas de aná
 
 El conjunto de datos fue obtenido mediante una API en formato JSON e incluye información relacionada con:
 
-Datos demográficos
+- Datos demográficos
 
-Tipo de contrato
+- Tipo de contrato
 
-Métodos de pago
+- Métodos de pago
 
-Información de facturación
+- Información de facturación
+  
+- Uso de servicios
 
-Uso de servicios
-
-Variable objetivo: Churn
+- Variable objetivo: Churn
 
 ## 🧹 Preparación y limpieza de datos
 
@@ -137,23 +137,23 @@ Las variables contractuales y económicas son determinantes clave.
 
 Implementación de modelos supervisados:
 
-Regresión Logística
+- Regresión Logística
 
-Random Forest
+- Random Forest
 
-Gradient Boosting
+- Gradient Boosting
 
 Evaluación mediante métricas:
 
-ROC-AUC
+- ROC-AUC
 
-Matriz de confusión
+- Matriz de confusión
 
-Precision y Recall
+- Precision y Recall
 
-Análisis de importancia de variables.
+- Análisis de importancia de variables.
 
-Construcción de un pipeline de predicción de churn.
+- Construcción de un pipeline de predicción de churn.
 
 ## 🛠️ Tecnologías utilizadas
 
@@ -165,4 +165,10 @@ Construcción de un pipeline de predicción de churn.
 
 - Matplotlib
 
-Google Colab
+- Seaborn
+
+- Google Colab
+
+- Pandas
+
+- Nu
