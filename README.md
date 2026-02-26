@@ -3,67 +3,71 @@ Telecom X – Análisis de Evasión de Clientes
 Autor: Armando René Cartagena Muñoz
 Programa: Especialización en Data Science
 Proyecto académico: Challenge Telecom X – Alura
+📌 Descripción del proyecto
 
-1. Introducción
+La evasión de clientes (customer churn) representa uno de los principales desafíos estratégicos en la industria de telecomunicaciones, debido a su impacto directo en los ingresos y en la sostenibilidad del negocio.
 
-La evasión de clientes (customer churn) constituye uno de los principales desafíos estratégicos en empresas del sector de telecomunicaciones, debido a su impacto directo en la estabilidad financiera y la sostenibilidad del negocio. La pérdida recurrente de clientes no solo afecta los ingresos, sino que incrementa los costos asociados a adquisición y marketing.
+Este proyecto desarrolla un Análisis Exploratorio de Datos (EDA) sobre la base de clientes de Telecom X, con el objetivo de identificar patrones, relaciones y variables asociadas a la cancelación del servicio.
 
-El presente trabajo desarrolla un Análisis Exploratorio de Datos (EDA) orientado a identificar patrones, relaciones y variables potencialmente asociadas al fenómeno de cancelación del servicio en la empresa Telecom X.
+El análisis constituye la fase inicial para la construcción futura de modelos predictivos de clasificación orientados a la estimación de probabilidad de churn.
 
-Este estudio tiene un enfoque analítico–descriptivo y se enmarca dentro de un ejercicio académico aplicado, con el propósito de sentar las bases para futuros modelos predictivos de clasificación orientados a la anticipación del churn.
+🎯 Objetivos
+Objetivo general
 
-2. Planteamiento del problema
+Analizar el comportamiento de la evasión de clientes mediante técnicas de análisis exploratorio de datos, con el fin de identificar factores relevantes para la toma de decisiones estratégicas.
 
-La organización enfrenta una tasa significativa de cancelación del servicio. En este contexto, surge la necesidad de responder a la siguiente pregunta de investigación:
-
-¿Qué variables demográficas, contractuales y financieras presentan mayor asociación con la evasión de clientes?
-
-El análisis busca generar evidencia cuantitativa que permita comprender el comportamiento de los usuarios y orientar estrategias de retención basadas en datos.
-
-3. Objetivos
-3.1 Objetivo general
-
-Analizar el comportamiento del churn en Telecom X mediante técnicas de análisis exploratorio de datos, con el fin de identificar variables relevantes para la toma de decisiones estratégicas.
-
-3.2 Objetivos específicos
+Objetivos específicos
 
 Evaluar la distribución de la variable objetivo (churn).
 
 Analizar la relación entre variables categóricas y la cancelación del servicio.
 
-Comparar variables numéricas entre clientes activos y clientes que cancelaron.
+Comparar variables numéricas entre clientes que evaden y clientes que permanecen.
 
-Examinar la correlación entre variables cuantitativas.
+Examinar correlaciones entre variables cuantitativas.
 
-Derivar insights estratégicos con potencial aplicación en modelos predictivos.
+Generar insights estratégicos con potencial aplicación en modelos predictivos.
 
-4. Preparación y tratamiento de datos
+📂 Descripción del conjunto de datos
 
-El proceso de data wrangling incluyó las siguientes etapas metodológicas:
+El conjunto de datos fue obtenido mediante una API en formato JSON e incluye información relacionada con:
 
-Extracción de datos desde una API en formato JSON.
+Datos demográficos
 
-Transformación y estructuración en un DataFrame para su manipulación.
+Tipo de contrato
 
-Identificación y tratamiento de valores faltantes e inconsistencias.
+Métodos de pago
 
-Conversión de variables numéricas al tipo de dato correspondiente.
+Información de facturación
 
-Estandarización de variables binarias (Yes/No → codificación homogénea).
+Uso de servicios
 
-Creación de variables derivadas, como Cuentas_Diarias, con el objetivo de enriquecer el análisis financiero.
+Variable objetivo: Churn
 
-Estas etapas garantizaron consistencia estructural y calidad mínima de los datos antes del análisis exploratorio.
+🧹 Preparación y limpieza de datos
 
-5. Análisis Exploratorio de Datos (EDA)
-5.1 Distribución de la variable objetivo
+El proceso de preprocesamiento incluyó:
 
-Se examinó la proporción de clientes que cancelaron el servicio frente a aquellos que permanecen activos, con el fin de evaluar el balance de clases y la magnitud del fenómeno.
+Extracción y transformación de datos desde JSON a DataFrame.
 
-El análisis permitió dimensionar la relevancia del churn dentro del conjunto de datos.
-5.2 Análisis de variables categóricas
+Identificación y tratamiento de valores faltantes.
 
-Se estudió la relación entre churn y variables como:
+Corrección de tipos de datos en variables numéricas.
+
+Estandarización de variables binarias (Yes/No).
+
+Creación de variables derivadas (por ejemplo, Cargos_Diarios).
+
+Estas etapas garantizaron coherencia estructural y calidad analítica antes de realizar el análisis exploratorio.
+
+📊 Análisis Exploratorio de Datos (EDA)
+1️⃣ Distribución del churn
+
+Se evaluó la proporción de clientes que cancelaron el servicio frente a aquellos que permanecen activos, permitiendo dimensionar la magnitud del fenómeno.
+
+2️⃣ Análisis de variables categóricas
+
+Se examinó la relación entre churn y:
 
 Tipo de contrato
 
@@ -71,71 +75,88 @@ Género
 
 Método de pago
 
-Los resultados evidencian una mayor tasa de evasión en clientes con contratos mensuales, lo cual sugiere que la flexibilidad contractual podría estar asociada a una menor fidelización.
+Hallazgo relevante:
+Los contratos mensuales presentan una tasa de evasión significativamente mayor que los contratos de largo plazo.
 
-5.3 Análisis de variables numéricas
+3️⃣ Análisis de variables numéricas
 
-Para las variables cuantitativas (antigüedad, cargos mensuales, total facturado y cargos diarios) se emplearon diagramas de caja (boxplots), permitiendo comparar:
+Variables analizadas:
+
+Antigüedad (Tenure)
+
+Cargos mensuales
+
+Cargos totales
+
+Cargos diarios (variable derivada)
+
+Se utilizaron diagramas de caja (boxplots) para comparar:
 
 Mediana
 
-Rango intercuartílico
-
 Dispersión
+
+Rango intercuartílico
 
 Valores atípicos
 
-Principales hallazgos:
+Principales resultados:
 
-Los clientes que cancelan presentan menor antigüedad promedio.
+Los clientes con menor antigüedad presentan mayor probabilidad de evasión.
 
-El churn se asocia a mayores cargos mensuales.
+Los cargos mensuales elevados se asocian positivamente con el churn.
 
-El total facturado muestra alta dependencia de la antigüedad del cliente.
+Existe fuerte relación entre cargos totales y antigüedad.
 
-Estos resultados sugieren que la permanencia en el servicio podría actuar como variable moderadora del riesgo de cancelación.
-
-6. Análisis de correlación
+🔗 Análisis de correlación
 
 Se construyó una matriz de correlación para evaluar relaciones lineales entre variables numéricas.
 
-Hallazgos relevantes:
+Observaciones principales:
 
-La antigüedad presenta correlación negativa con el churn.
+Relación inversa entre antigüedad y churn.
 
-Los cargos mensuales y diarios muestran asociación positiva con la evasión.
+Asociación positiva entre cargos mensuales y evasión.
 
-Existe fuerte correlación entre total facturado y antigüedad, lo cual es consistente con la lógica acumulativa del servicio.
+Alta correlación entre cargos totales y antigüedad.
 
-Este análisis permite anticipar posibles problemas de multicolinealidad en futuros modelos predictivos.
+Este análisis permite anticipar posibles efectos de multicolinealidad en futuros modelos predictivos.
 
-7. Conclusiones
+📈 Insights estratégicos
 
-El análisis exploratorio evidencia que:
+El churn se concentra en clientes recientes con contratos mensuales.
 
-El churn se concentra en clientes de baja antigüedad.
-
-Los contratos mensuales presentan mayor vulnerabilidad a la cancelación.
-
-La permanencia prolongada actúa como factor protector.
+La antigüedad actúa como factor protector.
 
 El nivel de facturación influye en el comportamiento de abandono.
 
-Estos hallazgos aportan insumos estratégicos para la formulación de políticas de retención y segmentación.
+Las variables contractuales y económicas son determinantes clave.
 
-8. Recomendaciones estratégicas
+🚀 Trabajo futuro
 
-Diseñar incentivos para migrar clientes hacia contratos de mayor duración.
+Implementación de modelos supervisados:
 
-Implementar modelos de alerta temprana durante los primeros meses del cliente.
+Regresión Logística
 
-Evaluar esquemas de beneficios o ajustes tarifarios para clientes con alta facturación.
+Random Forest
 
-Avanzar hacia el desarrollo de modelos predictivos supervisados (Logistic Regression, Random Forest, Gradient Boosting) para estimar probabilidad de churn.
+Gradient Boosting
 
-9. Tecnologías utilizadas
+Evaluación mediante métricas:
 
-Python
+ROC-AUC
+
+Matriz de confusión
+
+Precision y Recall
+
+Análisis de importancia de variables.
+
+Construcción de un pipeline de predicción de churn.
+
+🛠️ Tecnologías utilizadas
+
+Python 3.x
 
 Pandas
 
@@ -146,9 +167,3 @@ Matplotlib
 Seaborn
 
 Google Colab
-
-10. Consideraciones finales
-
-Este proyecto fue desarrollado como ejercicio académico aplicado dentro del Challenge Telecom X de Alura, en el marco de la formación en Data Science.
-
-El análisis constituye una fase exploratoria que puede servir como base para la construcción de modelos predictivos y evaluaciones más avanzadas en etapas posteriores del proyecto.
